@@ -3,15 +3,10 @@
 # Usage (one line, nothing to save):
 #   irm <RAW_URL_OF_THIS_SCRIPT> | iex
 #
-# Or with parameters:
-#   & ([scriptblock]::Create((irm <URL>))) -TargetDir "D:\tmp\test"
-#
 # Notes:
 #   - Auto-fixes the most common install failure: an extra nested folder
 #     (zip/NAME/NAME/SKILL.md instead of zip/NAME/SKILL.md)
 #   - Idempotent: re-running replaces the existing install
-#   - Messages are ASCII-only on purpose, so the script works regardless of
-#     the console code page.
 
 param(
     [string[]]$ZipUrl = @(
@@ -120,7 +115,6 @@ try {
         Die "Install verification failed: SKILL.md missing at $final"
     }
 
-    # report the skill's description so the user can sanity-check
     $head = Get-Content $final -TotalCount 6 -Encoding UTF8
     $descLine = $head | Where-Object { $_ -match '^description:' } | Select-Object -First 1
 
