@@ -15,9 +15,8 @@
 
 param(
     [string[]]$ZipUrl = @(
-        "https://gitee.com/REPLACE_USER/REPLACE_REPO/raw/master/retrieval-exam-protocol.zip",
-        "https://ghproxy.net/https://raw.githubusercontent.com/REPLACE_USER/REPLACE_REPO/main/retrieval-exam-protocol.zip",
-        "https://gh-proxy.com/https://raw.githubusercontent.com/REPLACE_USER/REPLACE_REPO/main/retrieval-exam-protocol.zip"
+        "https://ghproxy.net/https://raw.githubusercontent.com/NulliaOaO/test/main/retrieval-exam-protocol.zip",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/NulliaOaO/test/main/retrieval-exam-protocol.zip"
     ),
     [string]$SkillName = "retrieval-exam-protocol",
     [string]$TargetDir = "",
